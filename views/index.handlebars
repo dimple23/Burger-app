@@ -1,0 +1,91 @@
+<div class="jumbotron  text-light text-center p-5">
+  <h1> Eat the Burgers App!</h1>
+</div>
+
+<div class="container">
+
+  <div class="row">
+
+
+    <div class="col-12 ">
+      <form id="burger-form">
+        <div class="alert alert-info" role="alert">
+          <h2>You can Place your Burger here</h2>
+        </div>
+        
+        <input class="form-control" id="name-input" placeholder="Burger's Name" />
+        <button class="btn btn-success btn-block" type="submit"> <i class="fas fa-cheeseburger"></i>
+          Place A Burger!
+        </button>
+      </form>
+    </div>
+
+
+    <div class="col-12 ">
+
+      <div class="row">
+
+        <div class="col-12 col-md-6">
+
+          <ul class="list-group my-5">
+            <li class="list-group-item list-group-item-info text-center">
+              <h2>Burger on menu</h2>
+            </li>
+            {{#each burgerData}}
+
+            {{#unless devorted}}
+
+            <li class="list-group-item d-flex list-group-item-warning">
+              {{name}}
+              <span class="ml-auto">
+                <button data-id="{{id}}" data-devorted="true" class="btn btn-sm btn-info update-burger"><i
+                    class="fas fa-cheeseburger"></i>
+                  Devour!
+                </button>
+
+
+                <button data-id="{{id}}" class="btn btn-sm btn-danger delete-burger"> <i
+                    class="fas fa-cheeseburger"></i>
+                  Delete Burger
+                </button>
+              </span>
+            </li>
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-6">
+
+          <ul class="list-group my-5 ">
+            <li class="list-group-item list-group-item-info text-center">
+              <h2>Devoured Burger</h2>
+            </li>
+            {{#each burgerData}}
+
+            {{#if devorted}}
+            <li class="list-group-item d-flex list-group-item-warning">
+              {{name}}
+              <span class="ml-auto">
+                <button data-id="{{id}}" data-devorted="false" class="btn btn-sm btn-info update-burger">
+                  Devoured! <i class="fas fa-cheeseburger"></i>
+                </button>
+
+
+                <button data-id="{{id}}" class="btn btn-sm btn-danger delete-burger"><i class="fas fa-cheeseburger"></i>
+                  Delete Burger
+                </button>
+              </span>
+            </li>
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="./assets/js/burgers.js"></script>
