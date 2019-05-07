@@ -10,9 +10,9 @@ The user may enter any burger name to add it to the menu. This also adds the new
 
 ##Technology Used
 
-Bootstrap
-express
-node
-handlebars
-MySql
+  1)Bootstrap
+  2)express.js
+  3)node.js
+  4)handlebars.js
+  5)MySql
 
